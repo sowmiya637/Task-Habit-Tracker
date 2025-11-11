@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rules | Task & Habit Tracker</title>
+  <link rel="stylesheet" href="rules.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <h1>Task & Habit Tracker</h1>
+    <p>Manage your tasks and build lasting habits with analytics and custom rules</p>
+    <button id="themeToggle" title="Toggle Theme" style="
+      border: none;
+      background: transparent;
+      font-size: 18px;
+      cursor: pointer;
+      color: #333;
+      justify-content: right;
+    ">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+ 
+
+
+  <!-- Navigation Tabs -->
+   <nav class="tabs">
+  <a href="dashboard.html" class="tab-btn ">
+    <img src="../asset/dashboard.png" alt="Dashboard" class="tab-icon">
+    <span class="tab-text">Dashboard</span>
+  </a>
+  <a href="tasks.html" class="tab-btn">
+    <img src="../asset/tasks.png" alt="Task" class="tab-icon">
+    <span class="tab-text">Tasks</span>
+  </a>
+  <a href="habits.html" class="tab-btn">
+    <img src="../asset/habits.png" alt="Habit" class="tab-icon">
+    <span class="tab-text">Habits</span>
+  </a>
+  <a href="rules.html" class="tab-btn active">
+    <img src="../asset/setting.svg" alt="Rules" class="tab-icon">
+    <span class="tab-text">Rules</span>
+  </a>
+</nav>
+
+  <div class="rules-page">
+    <h2>Rules</h2>
+
+    <!-- Search + Add Rule -->
+    <div class="rules-actions">
+      <div class="right-actions">
+        <div class="search-wrapper">
+          <input type="text" id="searchInput" placeholder="Search rules..." />
+        </div>
+        <button id="addRuleBtn" class="add-rule-btn">
+          <i class="fa-solid fa-plus"></i> Add Rules
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="rules-empty-state" id="rulesEmptyState">
+      <div class="empty-icon">
+        <div class="dot"></div>
+        <div class="line"></div>
+        <div class="dot"></div>
+      </div>
+      <p>No rules yet. Create automation rules to manage your tasks and habits</p>
+    </div>
+
+    <!-- Rule List Container -->
+    <div id="rulesList" style="margin-top:30px;"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="addRuleModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Add Rule</h2>
+      <p class="subtext">Build custom rules with conditions and actions</p>
+
+      <form id="ruleForm">
+        <input type="hidden" id="editRuleId" value="">
+        
+        <label>Rule name</label>
+        <input type="text" id="ruleName" placeholder="Enter rule name" required />
+
+        <label>Description</label>
+        <textarea id="ruleDesc" placeholder="Description"></textarea>
+
+        <label>Apply to</label>
+        <select id="applyTo" required>
+          <option value="">Select</option>
+          <option value="task">Task</option>
+          <option value="habit">Habit</option>
+        </select>
+
+        <!-- Condition Section -->
+        <div class="condition-section">
+          <h3>Condition</h3>
+          <select id="condition" required>
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+          <div class="condition-list">
+            <!-- Initial condition row will be added here dynamically -->
+          </div>
+
+          <button type="button" class="add-condition">+ Add condition</button>
+        </div>
+
+        <!-- Action Section -->
+        <div class="form-group">
+          <label>Action</label>
+          <div class="actions-box" id="actionbox">
+            <select id="actionSelect">
+              <option value="showBadge">Show badge</option>
+              <option value="highlight">Highlight</option>
+            </select>
+            <input type="text" id="actionValue" placeholder="Action value (optional)" style="margin-top:10px;">
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="modal-buttons">
+          <button type="button" class="cancel-btn">Cancel</button>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+
+
+  <script src="rules.js"></script>
+  <script src="habits.js"></script>
+  <script src="tasks.js"></script>
+  <script src="tabs.js"></script>
+
+
+  <!-- Toast Notification -->
+<div id="toastContainer"></div>
+
+</body>
+</html>
