@@ -1,0 +1,1251 @@
+ :root {
+   --tab-active: #00c896;
+ }
+/* Navbar */
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 35px 8px 35px;
+    background-color: var(--card-bg);
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-bottom: 25px;
+}
+
+.tab {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab:hover {
+  background: #f5f5f5;
+}
+
+.tab.active {
+  color: #16a34a;
+  border-bottom: 2px solid #16a34a;
+}
+.tab.active i {
+  color: #16a34a;
+}
+
+/* Rules Page */
+.rules-page {
+  padding: 20px 40px;
+  font-family:  "Open Sans", sans-serif;
+}
+
+.rules-page h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: -30px;
+}
+
+/* Search + Add Rule */
+.rules-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+   margin-top: -55px;
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 250px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 8px 30px 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+.add-rule-btn {
+  background: #3ab46d;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.add-rule-btn:hover {
+  background: #33a260;
+}
+
+/* Empty State */
+.rules-empty-state {
+  text-align: center;
+  color: #888;
+  margin-top: 80px;
+}
+
+.empty-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.empty-icon .dot {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.empty-icon .line {
+  width: 40px;
+  height: 2px;
+  background: #ccc;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background: #fff;
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Form */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.condition-section {
+  margin-top: 20px;
+  font-family:  "Open Sans", sans-serif;
+}
+
+.condition-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.condition-row select {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  height: 35px;
+}
+
+.delete-condition-btn {
+  color: rgb(255, 0, 0);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+.add-condition {
+  color: #22a06b;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  background: #eee;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  background: #22a06b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+/* Rule Card */
+.rule-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #fff;
+  position: relative;
+}
+
+.rule-card h4 {
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.rule-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Card container */
+.rule-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+/* Card active/inactive */
+.rule-card.active {
+  opacity: 1;
+}
+
+.rule-card.inactive {
+  opacity: 0.5;
+}
+
+/* Left section */
+.rule-card .left-section h4 {
+  margin: 0;
+  
+}
+
+.rule-card .left-section p {
+  font-size: 13px;
+  margin: 4px 0 0 0;
+  color: #777;
+}
+
+/* Tag styling */
+.rule-card .left-section span {
+  font-size: 12px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  padding: 2px 8px;
+  color: #555;
+}
+
+/* Right section: icons + toggle */
+.rule-card .right-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Icons styling */
+.rule-card .right-section i {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.rule-card .right-section i.fa-trash {
+  color: #f44336;
+}
+
+.rule-card .right-section i.fa-trash:hover {
+  color: #d32f2f;
+}
+
+.rule-card .right-section i.fa-pen-to-square {
+  color: #2ecc71;
+}
+
+.rule-card .right-section i.fa-pen-to-square:hover {
+  color: #27ae60;
+}
+
+/* Toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 18px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 18px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* Overlay background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup box */
+.popup-box {
+  background: #fff;
+  border-radius: 8px;
+  width: 350px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  font-family:  "Open Sans", sans-serif;
+}
+
+/* Header text */
+.popup-box > p:first-child {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+/* Close button */
+#cancelDelete2 {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Message text */
+.popup-box > p:nth-of-type(2) {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.popup-box strong {
+  font-weight: 600;
+}
+
+/* Button container */
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Cancel button */
+#cancelDelete {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#cancelDelete:hover {
+  background: #f3f3f3;
+}
+
+/* Delete button */
+#confirmDelete {
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#confirmDelete:hover {
+  background: #43a047;
+}
+
+/* ===== LIGHT MODE (Default) ===== */
+body {
+  background-color: #ffffff; 
+  color: #000000; 
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+button, input, select, .card, .habit-card, .add-btn, .day-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== DARK MODE (Only background changes) ===== */
+body.dark-mode {
+  background-color: #121212; 
+  color: #ffffff;
+}
+/* Navbar */
+body.dark-mode header {
+  background-color: #1f1f1f; 
+  color: #fff;
+}
+
+header.dark-mode {
+  background-color: #1f1f1f; 
+}
+
+/* Theme toggle button */
+#themeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode #themeToggle {
+  color: #f1f1f1;
+}
+
+#themeToggle i {
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode #themeToggle i {
+  transform: rotate(180deg);
+}
+body.dark-mode .rules-pa,
+body.dark-mode .tasks-page,
+body.dark-mode .habits-page  {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+/* For inner texts inside the card */
+body.dark-mode .rule-card h4,
+body.dark-mode .rule-card p,
+body.dark-mode .rule-item h4,
+body.dark-mode .rule-item p {
+  color: #ffffff;
+}
+body.dark-mode .rule-card,
+body.dark-mode .rule-item  {
+  background-color: #1f1f1f; 
+  color: #f1f1f1;          
+  border: 1px solid #333;  
+}
+
+body.dark-mode .rule-card p {
+  color: #ccc;
+}
+
+body.dark-mode .rule-card .left-section span {
+  background: #333; 
+  color: #eee;
+}
+body.dark-mode .modal-content {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode .add-condition,
+body.dark-mode .delete-condition-btn,
+body.dark-mode .submit-btn,
+body.dark-mode .cancel-btn {
+  color: #0a0a0a;
+}
+body.dark-mode .popup-box {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
+
+body.dark-mode #cancelDelete,
+body.dark-mode #confirmDelete {
+  background-color: #333;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode #confirmDelete:hover,
+body.dark-mode #cancelDelete:hover {
+  background-color: #444;
+}
+body.dark-mode .rule-card .right-section img {
+  filter: brightness(0) invert(1); 
+}
+/* Navbar dark mode */
+body.dark-mode .tabs,
+body.dark-mode .tab-btn .tab-text  {
+  background-color: #1f1f1f; 
+  color: white;
+
+}
+
+body.dark-mode .tab {
+  color: #eee; 
+}
+
+body.dark-mode .tab.active,
+body.dark-mode .tab-btn.active .tab-text{
+  color: #00c896;
+ 
+}
+
+body.dark-mode .tab:hover,
+body.dark-mode .tab-btn:hover .tab-text {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .tab i,
+body.dark-mode .tab img {
+  filter: brightness(0) invert(1); 
+}
+
+body.dark-mode select option {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+}
+/* DARK MODE: NAVBAR TAB TEXT */
+body.dark-theme .tabs .tab-btn {
+  color: #ffffff; 
+}
+
+body.dark-theme .tabs .tab-btn .tab-text {
+  color: #ffffff !important; 
+}
+
+body.dark-theme .tabs .tab-btn.active .tab-text {
+  color: #16a34a !important; 
+}
+
+
+body.dark-theme .tabs .tab-btn:not(.active):hover .tab-text {
+  color: #16a34a !important;
+}
+
+
+/*  TOAST FIXED TOP RIGHT  */
+#toastContainer {
+  all: unset;
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  pointer-events: none !important;
+}
+
+.toast {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #e6f4ea !important; 
+  color: #000 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  min-width: 380px !important;
+  max-width: 450px !important;
+  overflow: hidden !important;
+  pointer-events: auto !important;
+  animation: slideIn 0.35s ease-out !important;
+}
+
+/* Green icon box on the left */
+.toast-icon {
+  background-color: #4ebc8a !important;
+  color: #fff !important;
+  width: 80px !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 28px !important;
+  font-weight: bold !important;
+}
+
+/* Text area */
+.toast-content {
+  padding: 16px 20px !important;
+  flex: 1 !important;
+}
+
+.toast-message {
+  font-size: 16px !important;
+  margin: 0 !important;
+  color: #000 !important;
+  line-height: 1.4 !important;
+}
+
+/* Close button */
+.toast-close-btn {
+  background: none !important;
+  border: none !important;
+  color: #555 !important;
+  font-size: 24px !important;
+  cursor: pointer !important;
+  padding: 0 15px !important;
+}
+
+.toast-close-btn:hover {
+  color: #000 !important;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast.hiding {
+  animation: slideOut 0.3s ease-out forwards !important;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+/* ===== FONT STYLING ===== */
+
+body,
+label,
+input,
+textarea,
+select,
+button,
+.tab,
+.add-rule-btn,
+.search-wrapper input,
+.rules-page,
+.rule-card,
+.condition-row,
+.modal-content,
+.toast,
+.popup-box {
+  font-family: "Open Sans", sans-serif !important;
+}
+.search-icon-outside {
+  position: absolute;
+  left: 13px;            
+  width: 15px;
+  height: 16px;
+  top: 40%;
+  opacity: 0.7;
+  pointer-events: none;   
+}
+
+#searchInput {
+  padding: 10px 1px 8px 35px; 
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.rules-page h2,
+.rule-card h4,
+.modal-content h3,
+.modal-content h2,
+.popup-box > p:first-child {
+  font-family: "Quicksand", sans-serif !important;
+  font-weight: 700;
+  color: #111;
+  padding: 5px;
+}
+header {
+  margin-left: 35px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 17px;
+   width: 526.23px;      
+  height: 36px;        
+  line-height: 36px;    
+  overflow: hidden;    
+}
+
+header p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0;
+  
+}
+/* icons */
+.tabs {
+  display: flex;
+  gap: 20px; 
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  text-decoration: none;
+  color: #000; 
+  font-family: 'Open Sans', sans-serif;
+}
+
+.tab-icon {
+  display: inline-block;
+}
+
+/* Exact sizes for each icon from Figma */
+.tab-btn img[alt="Dashboard"] {
+  width: 2opx;
+  height: 20px;
+}
+
+.tab-btn img[alt="Task"] {
+  width: 20px;
+  height: 20px;
+}
+
+.tab-btn img[alt="Habits"] {
+  width: 20px; 
+  height: 20px;
+}
+
+.tab-btn img[alt="Rules"] {
+  width: 20px;
+  height: 20px;
+}
+
+/* Optional: vertical alignment */
+.tab-text {
+  font-size: 14px;
+}
+
+
+/* Keep icons normal for all tabs */
+.tab-btn .tab-icon {
+  filter: none; 
+   width: 20px;
+  height: 20px;
+  filter: grayscale(100%) brightness(0.6);
+  transition: filter 0.2s ease;
+}
+/* ===== Active Tab ===== */
+.tab-btn.active {
+    color: var(--tab-active);
+    border-bottom: 3px solid var(--tab-active);
+    padding-bottom: 8px;
+}
+
+
+.tab-btn.active .tab-icon {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(85%) saturate(430%) hue-rotate(116deg) brightness(97%) contrast(97%);
+}
+
+/* ===== Hover Effect ===== */
+.tab-btn:hover {
+  color: #00c896;
+}
+
+.tab-btn:hover .tab-icon {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(85%) saturate(430%) hue-rotate(116deg) brightness(97%) contrast(97%);
+}
+
+.tab-btn:hover .tab-text {
+  color: #16a34a;
+}
+
+
+.rule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.rule-details {
+  flex: 1;
+}
+
+.rule-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.rule-actions img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+/* ===== Add Rule Modal ===== */
+.add-rule-modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.add-rule-modal .modal-content {
+  background-color: #fff;
+  width: 500px;       
+  max-width: 100%;      
+  border-radius: 12px;
+  padding: 25px 20px;
+  position: relative;
+  max-height: 90vh;     
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+/* Close button */
+.add-rule-modal .close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+.add-rule-modal .close:hover {
+  color: #000;
+}
+
+/* Form elements inside modal */
+.add-rule-modal label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.add-rule-modal input,
+.add-rule-modal textarea,
+.add-rule-modal select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Buttons container */
+.add-rule-modal .modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.add-rule-modal .cancel-btn {
+  background: #eee;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-rule-modal .submit-btn {
+  background: #22a06b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/*  Responsive: Tablet  */
+@media screen and (max-width: 768px) {
+  .add-rule-modal .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+  .add-rule-modal .modal-buttons {
+    flex-direction: column;
+  }
+  .add-rule-modal .cancel-btn,
+  .add-rule-modal .submit-btn {
+    width: 100%;
+  }
+}
+
+/*  Responsive: Mobile  */
+@media screen and (max-width: 480px) {
+  .add-rule-modal .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+  .add-rule-modal h2,
+  .add-rule-modal h3,
+  .add-rule-modal p {
+    font-size: 14px;
+  }
+  .add-rule-modal label,
+  .add-rule-modal input,
+  .add-rule-modal textarea,
+  .add-rule-modal select,
+  .add-rule-modal button {
+    font-size: 13px;
+  }
+  .add-rule-modal .modal-buttons {
+    gap: 8px;
+  }
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE IMPROVEMENTS 🧩 */
+/* ============================= */
+
+/* ===== Large Screens (Desktops) ===== */
+@media (min-width: 1200px) {
+  .rules-page {
+    padding: 30px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .tabs {
+    justify-content: flex-start;
+    padding: 30px 40px 10px 40px;
+  }
+}
+
+/* ===== Tablets (max-width: 1024px) ===== */
+@media (max-width: 1024px) {
+  header {
+    margin-left: 20px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+    width: auto;
+  }
+
+  .tabs {
+    gap: 25px;
+    padding: 20px 25px;
+  }
+
+  .rules-page {
+    padding: 20px 25px;
+  }
+
+  .rules-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: -35px;
+  }
+
+  .right-actions {
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .search-wrapper {
+    width: 220px;
+  }
+
+  .rule-card {
+    padding: 12px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .rule-card .right-section {
+    align-self: flex-end;
+  }
+}
+
+/* ===== Mobile (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  header {
+    margin-left: 15px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .tab-btn {
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .rules-page {
+    padding: 15px;
+  }
+
+  .rules-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: -25px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+
+  .add-rule-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .rule-card {
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .rule-card h4 {
+    font-size: 1rem;
+  }
+
+  .rule-card p {
+    font-size: 0.85rem;
+  }
+
+  .rule-card .right-section {
+    align-self: flex-end;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+/* ===== Small Phones (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  header {
+    margin-left: 10px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+  }
+
+  .tabs {
+    gap: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    font-size: 12px;
+  }
+
+  .rules-page {
+    padding: 10px;
+  }
+
+  .rules-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .add-rule-btn {
+    font-size: 0.9rem;
+    padding: 10px 100px;
+  }
+
+  .rule-card {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .rule-card .left-section p {
+    font-size: 0.8rem;
+  }
+
+  .rule-card .left-section span {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .popup-box {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .toast {
+    min-width: 300px !important;
+    max-width: 360px !important;
+  }
+}
+
+/* ===== Very Small Phones (max-width: 360px) ===== */
+@media (max-width: 360px) {
+  .tab-btn {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .tabs {
+    gap: 8px;
+  }
+
+  .rule-card {
+    font-size: 0.8rem;
+  }
+
+  .add-rule-btn {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .search-wrapper input {
+    font-size: 13px;
+  }
+}
