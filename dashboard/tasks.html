@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasks | Task & Habit Tracker</title>
+  <link rel="stylesheet" href="tasks.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <h1>Task & Habit Tracker</h1>
+    <p>Manage your tasks and build lasting habits with analytics and custom rules</p>
+   <!--  Dark/Light Mode Toggle -->
+    <button id="themeToggle" class="theme-toggle">
+  <img src="../asset/moon.png" alt="Toggle Theme" class="theme-icon">
+</button>
+  </header>
+
+  <!-- Toast Notification -->
+<div id="toast" class="toast">
+  <span id="toast-message"></span>
+  <button id="toast-close">&times;</button>
+</div>
+
+<!-- ===== Delete Confirmation Modal ===== -->
+<div id="deleteModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Delete</h3>
+    <p id="deleteMessage"></p>
+    <div class="modal-actions">
+      <button class="cancel-btn">Cancel</button>
+      <button class="delete-btn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation Tabs -->
+  <nav class="tabs">
+  <a href="dashboard.html" class="tab-btn ">
+    <img src="../asset/dashboard.png" alt="Dashboard" class="tab-icon">
+    <span class="tab-text">Dashboard</span>
+  </a>
+  <a href="tasks.html" class="tab-btn active">
+    <img src="../asset/tasks.png" alt="Task" class="tab-icon">
+    <span class="tab-text">Tasks</span>
+  </a>
+  <a href="habits.html" class="tab-btn">
+    <img src="../asset/habits.png" alt="Habit" class="tab-icon">
+    <span class="tab-text">Habits</span>
+  </a>
+  <a href="rules.html" class="tab-btn">
+    <img src="../asset/setting.svg" alt="Rules" class="tab-icon">
+    <span class="tab-text">Rules</span>
+  </a>
+</nav>
+
+  <!-- Filters -->
+  <section class="filters">
+    <div class="filter-left">
+      <button class="filter-btn"><i class="fa-solid fa-filter"></i> Filters:</button>
+      <select id="statusFilter">
+  <option value="All">All Status</option>
+  <option value="Todo">Todo</option>
+  <option value="In Progress">In Progress</option>
+  <option value="Done">Done</option>
+</select>
+
+<select id="priorityFilter">
+  <option value="All">All Priority</option>
+  <option value="High">High</option>
+  <option value="Medium">Medium</option>
+  <option value="Low">Low</option>
+</select>
+  </div>
+  <!--  Clear Filter Button -->
+    <button id="clearFilter" class="clear-filter-btn">Clear filter</button>
+  </div>
+    <div class="filter-right">
+       <label>
+         <img src="../asset/sortby.png" alt="Sort By" class="sort-icon">
+  <span class="sort-text">Sort By</span>
+      
+    </label>
+      <select id="sortSelect">
+  <option value="Created">Created at</option>
+  <option value="Priority">Priority</option>
+  <option value="Status">Status</option>
+</select>
+    </div>
+  </section>
+
+  <!-- Tasks Section -->
+  <!-- <section class="task-section"> -->
+    <div class="task-header">
+      <h2>Tasks</h2>
+      <div class="task-actions">
+         <img src="../asset/search.png" alt="Search" class="search-icon-outside">
+        <input type="text" id="searchInput" placeholder="Search">
+        <button id="addTaskBtn" class="add-btn"><i class="fa-solid fa-plus"></i> Add task</button>
+      </div>
+    </div>
+
+    <div class="empty-state">
+      <i class="fa-regular fa-clipboard"></i>
+      <p>No tasks found. Create your first task to get started!</p>
+    </div>
+  <!-- </section> -->
+
+  <!-- Modal -->
+
+  <!-- Modal Overlay -->
+<div id="modalOverlay" class="modal-overlay"></div>
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add task</h2>
+      <p>Add a new task with details, priority, and due date.</p>
+
+      <form id="taskForm">
+  <label for="taskTitle">Task title <span>*</span></label>
+  <input type="text" id="taskTitle" placeholder="Task title" required />
+
+  <label for="taskDesc">Description</label>
+  <textarea id="taskDesc" placeholder="Description"></textarea>
+
+  <label for="taskDate">Due date <span>*</span></label>
+  <input type="date" id="taskDate" required />
+
+  <label for="taskPriority">Priority <span>*</span></label>
+  <select id="taskPriority" required>
+    <option value="">Select priority</option>
+    <option>Low</option>
+    <option>Medium</option>
+    <option>High</option>
+  </select>
+
+  <label for="taskStatus">Status <span>*</span></label>
+  <select id="taskStatus" required>
+    <option>Todo</option>
+    <option>In Progress</option>
+    <option>Completed</option>
+  </select>
+
+  <div class="buttons">
+    <!-- <button type="button" class="cancel-btn">Cancel</button> -->
+     <button type="button" class="task-cancel-btn">Cancel</button>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </div>
+</form>
+</div>
+</div>
+
+
+
+
+  <script src="tabs.js"></script>
+  <script src="tasks.js"></script>
+  <script src="rules.js"></script>
+</body>
+</html>

@@ -1,0 +1,1489 @@
+---------- Base ----------
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+  color: #111827;
+}
+
+header {
+  margin-left: 35px;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 17px;
+   width: 526.23px;      
+  height: 36px;      
+  line-height: 36px;   
+  overflow: hidden;    
+}
+
+header p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0;
+  
+}
+
+/*  Tabs  */
+
+.tab {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab i {
+  font-size: 15px;
+}
+
+.tab.active {
+  color: #54BD95;
+  border-bottom: 2px solid #54BD95;
+  padding-bottom: 6px;
+}
+
+.tab:hover {
+  color: #54BD95;
+}
+.tab-btn.active .tab-icon {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(85%) saturate(430%) hue-rotate(116deg) brightness(97%) contrast(97%);
+}
+.move-up, .move-down {
+  transform: scale(0.8); /* slightly smaller to look thinner */
+  font-size: 14px;       /* reduce size */
+  color: #25314C;
+  cursor: pointer;
+}
+
+
+/* ===== Hover Effect ===== */
+.tab-btn:hover {
+  color: #00c896;
+}
+
+.tab-btn:hover .tab-icon {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(85%) saturate(430%) hue-rotate(116deg) brightness(97%) contrast(97%);
+}
+
+/* ---------- Filters ---------- */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+   border: 1px solid #e5e7eb; 
+  border-radius: 10px;       
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); 
+  margin: 10px 12px;   
+}
+
+.filter-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: #374151;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.filter-left select,
+.filter-right select {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ---------- Tasks Section ---------- */
+/* ===== Light Theme ===== */
+.task-section {
+  background-color: #fff;
+  margin: 30px 40px;
+  border-radius: 10px;
+  padding: 5px 5px;
+  padding-top: 5px; /* instead of 25px */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  color: #222;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Dark Theme ===== */
+body.dark-theme .task-section {
+  background-color: var(--card-bg, #2c2c2c);  /* dark card color */
+  color: var(--text-color, #fff);             /* white text */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);   /* deeper shadow for dark mode */
+  border: 1px solid var(--border-color, #444);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px;
+  padding: 0;
+}
+
+.task-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  margin: 15px 0 0 0;   /* move slightly down */
+  padding-top: 5px;     /* gentle push down */
+  flex: 1;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.task-actions input {
+  padding: 8px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  font-size: 14px;
+  width: 180px;
+  outline: none;
+}
+.task-actions {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-icon-outside {
+  position: absolute;
+  left: 13px;             /* position inside input */
+  width: 15px;
+  height: 16px;
+  top: 40%;
+  opacity: 0.7;
+  pointer-events: none;   /* allows clicking inside input */
+}
+
+#searchInput {
+  width: 250px; 
+  padding: 10px 12px 10px 40px; 
+  border: 1px solid #ccc;
+  border-radius: 20px; 
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+#searchInput:focus {
+  border-color: #00c896;
+}
+
+.task-actions input:focus {
+  border-color: #54BD95;
+}
+
+.add-btn {
+  background-color: #54BD95;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* .add-btn:hover {
+  background-color: #15803d;
+} */
+ /* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  display: none; /* hidden by default */
+  z-index: 1000; /* below modal but above page */
+}
+
+
+/* ---------- Empty State ---------- */
+.empty-state {
+  text-align: center;
+  color: #6b7280;
+  /* padding: 50px 0; */
+}
+
+.empty-state i {
+  font-size: 48px;
+  color: #d1d5db;
+  /* margin-bottom: 10px; */
+}
+
+ /* ===== Edit / Add Task Modal ===== */
+.modal {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 1001;
+  max-width: 400px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.modal .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  color: #111;
+  width: 420px;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+.modal-content h2 {
+  margin: 0 0 5px;
+  font-size: 20px;
+}
+
+.modal-content p {
+  color: #6b7280;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color: #374151;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 70px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.close:hover {
+  color: #111;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  background: #fff;
+  color: #54BD95;
+  border: 1.5px solid #54BD95;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cancel-btn:hover {
+  background: #f0fdf4;
+}
+
+.submit-btn {
+  background: #54BD95;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: #15803d;
+}
+
+.task-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin: 20px 22px; /* top-bottom 10px, left-right 12px only */
+  transition: 0.3s;
+}
+
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-actions-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions-icons i {
+  cursor: pointer;
+  font-size: 18px;
+  color: #54BD95;
+  transition: 0.2s;
+}
+
+.task-actions-icons i:hover {
+  color: #15803d;
+}
+
+.filter-right label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+.filter-right i {
+  color: #333;
+}
+
+/* Completed task styling */
+.task-card.completed h3 {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-card .fa-grip-vertical {
+  font-size: 14px;
+  color: #9ca3af;
+  cursor: move;
+}
+
+.task-card .task-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Toast Notification ===== */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #e6f4ea;
+  color: #222;
+  border-left: 6px solid #34a853;
+  border-radius: 8px;
+  padding: 12px 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 320px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(-20px);
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#toast-close {
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#toast-close:hover {
+  color: #000;
+}
+
+
+/* ===== Delete Confirmation Modal ===== */
+#deleteModal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Remove background - overlay handles it */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Box */
+.delete-modal-content {
+  position: relative;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Close (X) Icon */
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 20px;
+  color: #444;
+  cursor: pointer;
+}
+
+/* Title */
+#deleteModal h3 {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* ===== Buttons ===== */
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #2c3e50;
+  border: 1px solid #bfbfbf;
+}
+.btn-secondary:hover {
+  background-color: #f2f2f2;
+}
+
+.btn-danger {
+  background-color: #4caf50;
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #43a047;
+}
+
+/* ===== Dark Mode ===== */
+body.dark-mode #deleteModal .modal-content,
+body.dark-theme #deleteModal .modal-content {
+  background-color: #18181b !important;
+  color: #fff !important;
+}
+
+body.dark-mode .btn-secondary {
+  background-color: #444 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+body.dark-mode .btn-danger {
+  background-color: #5cd65c !important;
+  color: #5cd65c!important;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Force Delete Button to be Red */
+.delete-btn {
+  background-color: #21714b !important; 
+  color: #fff !important;                /* white text */
+  border: none !important;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b !important;  /* darker red on hover */
+}
+
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 5%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+
+/* ===== Theme Variables ===== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --card-bg: #ffffff;
+  --nav-bg: #f5f5f5;
+  --border-color: #e0e0e0;
+  --input-bg: #ffffff;
+  --btn-bg: #54BD95;
+  --btn-text: #222222;
+  --tab-active: #00c896;
+}
+
+/* ===== Dark Theme ===== */
+body.dark-theme {
+  --bg-color: #0b0a0afa;
+  --text-color: #f1f1f1;
+  --card-bg: #2b2b2b;
+  --nav-bg: #060505;
+  --border-color: #444444;
+  --input-bg: #333333;
+  --btn-bg: #3a3a3a;
+  --btn-text: #ffffff;
+}
+
+body.dark-theme .tab-btn {
+  color: #ffffff;          /* all tab text white */
+}
+
+/* body.dark-theme .tab-btn.active {
+  color: var(--tab-active); 
+}
+
+
+body.dark-theme .tab-btn:hover .tab-text {
+  color: var(--tab-active);
+} */
+
+/* Dark mode icons */
+body.dark-theme .tab-btn .tab-icon {
+  filter: brightness(0) invert(1); 
+}
+/* Active and Hover — keep green */
+body.dark-theme .tab-btn.active,
+body.dark-theme .tab-btn:hover {
+  color: #00c896 !important;
+}
+
+body.dark-theme .tab-btn.active .tab-icon,
+body.dark-theme .tab-btn:hover .tab-icon {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(85%) saturate(430%) hue-rotate(116deg) brightness(97%) contrast(97%) !important;
+}
+
+/* ===== Apply Theme Colors ===== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Dark Mode for Cards and Nav Bar ===== */
+body.dark-theme .tabs,
+body.dark-theme .filter-sort-card,
+body.dark-theme .habit-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+body.dark-theme .filter,
+body.dark-theme .sort,
+body.dark-theme .habit-header h3,
+body.dark-theme .badge,
+body.dark-theme .streak {
+  color: inherit;
+}
+
+body.dark-theme .add-btn {
+  background-color: #21a179; /* same green */
+  color: white;
+}
+
+body.dark-theme .add-btn:hover {
+  background-color: #199066;
+}
+/* ===== Dark Mode: Modals (Add / Edit / Delete) ===== */
+body.dark-theme .modal-content,
+body.dark-theme #deleteModal .modal-content,
+body.dark-theme #editModal .modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Input fields in dark mode */
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Keep placeholder text visible */
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #aaa;
+}
+
+/* Modal titles/subtitles */
+body.dark-theme .modal-header h2,
+body.dark-theme .modal-subtitle {
+  color: var(--text-color);
+}
+
+/* Close button color */
+body.dark-theme .close-btn,
+body.dark-theme #deleteModal .close {
+  color: #bbb;
+}
+
+body.dark-theme .close-btn:hover,
+body.dark-theme #deleteModal .close:hover {
+  color: #fff;
+}
+
+/* Buttons remain same color */
+body.dark-theme .submit-btn,
+body.dark-theme .save-btn,
+body.dark-theme .confirm-delete {
+  background-color: #00a57a;
+  color: #fff;
+}
+
+body.dark-theme .cancel-btn {
+  background-color: transparent;
+  border-color: #00a57a;
+  color: #00a57a;
+}
+/* Dark Mode: Filter/Sort Section */
+body.dark-theme .filters {
+  background-color: var(--card-bg) !important; 
+  color: var(--text-color) !important;        
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode: Select dropdowns inside filters */
+body.dark-theme .filters select {
+  background-color: var(--input-bg) !important; 
+  color: var(--text-color) !important;         
+  border: 1px solid var(--border-color) !important;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* Dark Mode: Sort label text & icon */
+body.dark-theme .filters .filter-right label,
+body.dark-theme .filters .filter-right .sort-text {
+  color: var(--text-color) !important;
+}
+
+body.dark-theme .filters .filter-right img.sort-icon {
+  filter: brightness(0) invert(1); 
+}
+
+/* ===== Header, Nav Bar, Filter/Sort Card ===== */
+.filter-sort-card {
+  background-color: var(--nav-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 35px 8px 35px;
+    background-color: var(--card-bg);
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-bottom: 25px;
+    /* padding-left: 10px; */
+}
+
+
+/* ===== Habit Cards ===== */
+.habit-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Text Elements Inside Cards ===== */
+.habit-card h3,
+.habit-card p,
+.filter-sort-card span,
+.filter-sort-card select,
+.filter-sort-card i {
+  color: var(--text-color);
+}
+
+/* ===== Buttons ===== */
+.add-btn,
+input[type="button"],
+input[type="submit"] {
+  background-color: var(--btn-bg);
+  color: #f7faf9;
+  border: 1px solid var(--border-color);
+   border-radius: 8px; /* ⬅️ Rounded corners */
+  padding: 8px 14px;  /* optional: better spacing */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+button{
+  color: #70BB98;
+    border-radius: 8px; 
+}
+/* button:hover {
+  background-color: #21a179;
+  color: #fff;
+}  */
+
+/* ===== Inputs / Selects ===== */
+input,
+textarea,
+select {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+/* ===== Modals ===== */
+.modal-content,
+#deleteModal .modal-content,
+#editModal .modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+/* ===== Task Cards Dark Mode ===== */
+body.dark-theme .task-card,
+body.dark-theme .habit-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Titles, labels, icons inside cards */
+body.dark-theme .task-card h3,
+body.dark-theme .task-card p,
+body.dark-theme .task-card span,
+body.dark-theme .task-card label,
+body.dark-theme .task-card select,
+body.dark-theme .task-card i {
+  color: var(--text-color);
+}
+
+/* Priority / date tags stay colorful */
+body.dark-theme .priority.low {
+  background-color: #6a5acd;
+  color: #fff;
+}
+body.dark-theme .priority.medium {
+  background-color: #f5b942;
+  color: #fff;
+}
+body.dark-theme .priority.high {
+  background-color: #e63946;
+  color: #fff;
+}
+
+/* ===== FULL DARK MODE ENHANCEMENT (Tasks, Navbar, Filter/Sort, Header) ===== */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --card-bg: #080808;
+  --toolbar-bg: #1a1a1a;
+  --border-color: #333;
+  --input-bg: #2b2b2b;
+  --btn-bg: #00a57a;
+  --btn-text: #fff;
+}
+
+/* Filter & Sort dropdowns */
+body.dark-theme .filter select,
+body.dark-theme .sort select,
+body.dark-theme .search-box input {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Add button in dark mode */
+body.dark-theme .add-btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+body.dark-theme .add-btn:hover {
+  background-color: #009066;
+}
+/* ===== Header / Navbar / Filter/Sort Cards ===== */
+body.dark-theme header,
+body.dark-theme .tabs,
+body.dark-theme .filter-sort-card,
+body.dark-theme .filter-card,
+body.dark-theme .sort-card,
+body.dark-theme nav {
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Outer Tasks Section ===== */
+body.dark-theme .tasks-section,
+body.dark-theme .content.active,
+body.dark-theme .tasks-container {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Task Cards (Inner Cards) ===== */
+body.dark-theme .habit-card,
+body.dark-theme .subtask-card {
+  background-color: #262626;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+body.dark-theme .task-card {
+  background-color: #030303;   /* dark card background */
+  color: #ffffff !important;    /* all text inside card white */
+  border: 1px solid #444;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+body.dark-theme .task-card,
+body.dark-theme .task-card * {
+  color: #f9f7f7 !important;  /* force all text inside task card to white */
+}
+/* ===== Dark Mode: Dropdowns inside Task Cards ===== */
+body.dark-theme .task-card select,
+body.dark-theme .task-card option {
+  background-color: #2b2b2b;  /* dark background */
+  color: #f5f0f0 !important;   /* white text */
+  border: 1px solid #555;      /* optional border for visibility */
+}
+
+/* ===== Dark Mode: Calendar / Date Text inside Task Card ===== */
+body.dark-theme .task-card .calendar-date {
+  color: #000000 !important;   /* white text for calendar date */
+}
+
+/* ===== Input Fields and Dropdowns ===== */
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* ===== Buttons ===== */
+body.dark-theme button,
+body.dark-theme .add-btn {
+  /* background-color: var(--btn-bg); */
+  color: var(--btn-text);
+  border: none;
+}
+
+/* body.dark-theme button:hover,
+body.dark-theme .add-btn:hover {
+  background-color: #009066;
+} */
+
+/* ===== Titles and Text ===== */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme label {
+  color: var(--text-color);
+}
+
+/* ===== Placeholder Text ===== */
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #aaa;
+}
+
+
+.task-badge {
+  display: inline-block;
+  font-weight: 600;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+.task-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  will-change: transform;
+}
+
+.task-card.dragging {
+  opacity: 0.6;
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  cursor: grabbing !important;
+}
+
+/* validation */
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+input.error-border,
+select.error-border,
+textarea.error-border {
+  border: 1px solid red;
+}
+.error-text {
+  color: red !important;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+  font-weight: 500;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+
+/* ===== FONT STYLING ===== */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Headings like page titles */
+header h1,
+.tab-btn.active,
+.section-title,
+.task-header h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+/* All filters, sort, search, buttons, and labels */
+button,
+label,
+input,
+select,
+textarea,
+.tab-btn,
+.filter-section,
+.sort-section,
+.search-bar,
+.add-btn {
+  font-family: 'Open Sans', sans-serif !important;
+}
+/* .tabs {
+  display: flex;
+  gap: 20px; 
+} */
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  text-decoration: none;
+  color: #000; /* adjust text color */
+  font-family: 'Open Sans', sans-serif;
+}
+
+.tab-icon {
+  display: inline-block;
+}
+
+/* Exact sizes for each icon from Figma */
+.tab-btn img[alt="Dashboard"] {
+  width: 2opx;
+  height: 20px;
+}
+
+.tab-btn img[alt="Task"] {
+  width: 20px;
+  height: 20px;
+}
+
+.tab-btn img[alt="Habits"] {
+  width: 20px; /* adjust if you have exact Figma size */
+  height: 20px;
+}
+
+.tab-btn img[alt="Rules"] {
+  width: 20px; /* adjust if you have exact Figma size */
+  height: 20px;
+}
+
+/* Optional: vertical alignment */
+.tab-text {
+  font-size: 14px;
+}
+/* Active tab text styling */
+
+.tab-btn.active {
+    color: var(--tab-active);
+    border-bottom: 3px solid var(--tab-active);
+    padding-bottom: 8px;
+}
+
+
+/* Keep icons normal for all tabs */
+.tab-btn .tab-icon {
+  width: 20px;
+  height: 20px;
+  filter: grayscale(100%) brightness(0.6);
+  transition: filter 0.2s ease;
+}
+
+/* Optional: hover effect for text */
+.tab-btn:hover .tab-text {
+  color: #54BD95;
+}
+/* sort by */
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between icon and text */
+}
+
+.sort-icon {
+  width: 18px;   /* small size */
+  height: 18px;
+}
+
+.sort-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #111;   /* or your preferred color */
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+/* ===== Date Box Light Mode ===== */
+.date-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 4px 10px;
+  background-color: #f3f3f8;
+}
+
+.date-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.date-text {
+  color: #374151;
+  font-weight: 500;
+}
+
+/* ===== Dark Mode ===== */
+body.dark-theme .date-box {
+  background-color: #09090a; /* dark gray bg */
+  border-color: #3a3a3f;
+}
+
+body.dark-theme .date-text {
+  color: #fff; /* white date text */
+}
+
+body.dark-theme .date-icon {
+  filter: brightness(0) invert(1); /* make icon white */
+}
+/* ===== Status Box Light Mode ===== */
+.status-row {
+  margin: 5px 0;
+  text-align: left;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-label {
+  color: #333;
+}
+
+.status-select {
+   width: 150px;
+  padding: 10px 12px;
+  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #374151;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none; /* reset default styles */
+}
+
+/* ===== Dark Mode ===== */
+body.dark-theme .status-row {
+  color: #fff;
+}
+
+body.dark-theme .status-label {
+  color: #fff;
+}
+
+body.dark-theme .status-select {
+  background-color: #0b0b0c; /* dark background */
+  color: #fff;              /* white text */
+  border-color: #3a3a3f;
+}
+
+body.dark-theme .status-select option {
+  background-color: #1e1e21;
+  color: #fff;
+}
+/* clear filter */
+
+.clear-filter-btn {
+  background: none;
+  border: none;
+  color: #00c896;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-right: 700px;
+
+}
+
+/* .clear-filter-btn:hover {
+  color: #009e74;
+} */
+
+/* Dark mode */
+body.dark-theme .clear-filter-btn {
+  color: #00c896;
+}
+
+.subtask-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.add-subtask-btn {
+  background-color: #34d399;
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subtask + .add-subtask-btn {
+  background-color: red;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet: 768px and below */
+@media (max-width: 768px) {
+  .tabs {
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  .tab-text {
+    font-size: 12px;
+  }
+
+  /* ===== BASE FILTER BAR ===== */
+/* ===== FILTER CARD CONTAINER ===== */
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+
+  color: #54BD95;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== FILTER ELEMENTS ===== */
+#statusFilter,
+#priorityFilter,
+#sortSelect {
+  flex: 1 1 180px;
+  min-width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 0 12px;
+  font-size: 14px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.2s ease;
+}
+
+/* ===== CLEAR FILTER BUTTON ===== */
+.clear-filter-btn {
+  flex: 0 0 auto;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background-color: var(--tab-active);
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  height: 40px;
+  white-space: nowrap;
+}
+
+.clear-filter-btn:hover {
+  background-color: var(--tab-hover);
+  transform: scale(1.03);
+}
+
+/* ===== TABLETS (max-width: 1024px) ===== */
+@media (max-width: 1024px) {
+  .filters {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  #statusFilter,
+  #priorityFilter,
+  #sortSelect {
+    flex: 1 1 30%;
+    min-width: 150px;
+  }
+
+  .clear-filter-btn {
+    flex: 1 1 100%;
+    max-width: 220px;
+    text-align: center;
+  }
+}
+
+/* ===== MOBILE (max-width: 600px) ===== */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #statusFilter,
+  #priorityFilter,
+  #sortSelect,
+  .clear-filter-btn {
+    width: 100%;
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  #statusFilter,
+  #priorityFilter,
+  #sortSelect {
+    font-size: 13px;
+  }
+
+  .clear-filter-btn {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+}
+
+
+
+  /* .filter-left, .filter-right {
+    width: 100%;
+    justify-content: flex-start;
+  } */
+
+  .task-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .task-actions {
+    width: 100%;
+  }
+
+  #searchInput {
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  .task-card {
+    margin: 8px 15px;
+  }
+}
+
+/* ===== UNIVERSAL FIXES ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents right-side gap */
+  width: 100%;
+}
+
+.task-page-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+
